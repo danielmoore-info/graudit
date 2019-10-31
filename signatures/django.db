@@ -1,4 +1,12 @@
-objects.raw
+# objects.raw is used when developers byass the ORM to execute raw SQL quries
+objects.raw\(
+# safe actually means not safe
 safe
-extra(
+# objects.extra can accidentally cause SQL injection
+objects.extra\(
+# Hardocded secret keys
 SECRET_KEY
+# removing CSRF protections on a view
+@csrf_exempt
+# causing XSS vulnerabilities
+autoescape\ off
